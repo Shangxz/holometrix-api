@@ -67,11 +67,11 @@ router.post('/', function(req, res) {
                 }
             
                 console.log(objectname);
-
+                res.json(objectname);
             });
 
             objectname += body.categories[0].name;
-            res.json(objectname);
+            
         });
         
 });
