@@ -90,8 +90,8 @@ router.post('/', function(req, res) {
 
         for (var k = 0; k < body.regions.length; k++){
             var region = body.regions[k];
-            for (var j = 0; j < regions.lines.length; j++){
-                var line = regions.lines[j];
+            for (var j = 0; j < region.lines.length; j++){
+                var line = region.lines[j];
                 for (var i = 0; i < line.words.length; i++){
                     var word = line.words[i].text;
                     objectname += " " + word;
