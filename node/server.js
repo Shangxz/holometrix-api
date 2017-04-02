@@ -49,7 +49,7 @@ router.post('/', function(req, res) {
 
         console.log(objectname);
 
-        res.json(objectname);
+        //res.json(objectname);
 
         });
 
@@ -96,7 +96,6 @@ router.post('/', function(req, res) {
 faceRec.post('/', function(req, res) {
 
         console.log(req.body);
-        //res.json(req.body);
         
         var request = require("request");
 
