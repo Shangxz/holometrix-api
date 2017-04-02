@@ -72,10 +72,33 @@ router.post('/', function(req, res) {
 
         console.log(body.regions[0]);
 
-        for (var k in body.regions[0].lines){
-            console.log(k);
-            //objectname = objectname + k.words[0].text;
-            //console.log(objectname);
+        {
+        //   "language": "en",
+        //   "textAngle": 0.0,
+        //   "orientation": "Up",
+        //   "regions": [
+        //     {
+        //       "boundingBox": "83,139,107,97",
+        //       "lines": [
+        //         {
+        //           "boundingBox": "89,139,94,23",
+        //           "words": [
+        //             {
+        //               "boundingBox": "89,139,94,23",
+        //               "text": "Minute"
+        //             }
+        //           ]
+        //         },
+
+        for (var k = 0; k < body.regions.length; k++){
+            var region = body.regions[k];
+            for (var j = 0; j < regions.lines.length; j++){
+                var line = regions.lines[j];
+                for (var i = 0; i < line.words.length; i++){
+                    var word = line.words[i].text;
+                    objectname += " " + word;
+                }
+            }
         }
         
         console.log(objectname);
