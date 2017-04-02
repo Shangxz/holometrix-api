@@ -71,8 +71,6 @@ router.post('/', function(req, res) {
         if (error) throw new Error(error);
 
         console.log(body.regions[0]);
-
-        {
         //   "language": "en",
         //   "textAngle": 0.0,
         //   "orientation": "Up",
