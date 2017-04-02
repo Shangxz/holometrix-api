@@ -57,7 +57,7 @@ router.post('/', function(req, res) {
         console.log(objectname);
 
         //res.json(objectname);
-        return objectname;
+        //return objectname;
 
         }).then(function(objectname){
             request(options1, function (error, response, body) {
@@ -81,9 +81,7 @@ router.post('/', function(req, res) {
                 res.json(objectname);
 
                 });
-
         });
-
 });
 
 faceRec.post('/', function(req, res) {
