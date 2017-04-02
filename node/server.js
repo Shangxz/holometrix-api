@@ -21,7 +21,6 @@ var faceRec = express.Router();
 
 
 var objectname = "";
-//
 
 router.post('/', function(req, res) {
 
@@ -50,7 +49,7 @@ router.post('/', function(req, res) {
 
         console.log(objectname);
 
-        res.json(objectname);
+        //res.json(objectname);
 
         });
 
