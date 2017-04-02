@@ -42,20 +42,6 @@ router.post('/', function(req, res) {
         body: { url : req.body },
         json: true };
 
-        request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-
-        objectname += body.categories[0].name;
-
-        console.log(objectname);
-
-        //res.json(objectname);
-
-        });
-
-        /////////////////////// OCR API CALL /////////////////////////////////////
-        console.log("ocr api call ");
-
         var options1 = { method: 'POST',
         url: 'https://westus.api.cognitive.microsoft.com/vision/v1.0/ocr?language=unk&detectOrientation =true',
         headers: 
@@ -66,31 +52,34 @@ router.post('/', function(req, res) {
         body: { url : req.body },
         json: true };
 
-        request(options1, function (error, response, body) {
+
+        request(options, function (error, response, body) {
         if (error) throw new Error(error);
+            request(options1, function (error, response, body) {
+            if (error) throw new Error(error);
 
-        //console.log(body.regions[0]);
+            //console.log(body.regions[0]);
 
-        for (var k = 0; k < body.regions.length; k++){
-            var region = body.regions[k];
-            for (var j = 0; j < region.lines.length; j++){
-                var line = region.lines[j];
-                for (var i = 0; i < line.words.length; i++){
-                    var word = line.words[i].text;
-                    objectname += " " + word;
+            for (var k = 0; k < body.regions.length; k++){
+                var region = body.regions[k];
+                for (var j = 0; j < region.lines.length; j++){
+                    var line = region.lines[j];
+                    for (var i = 0; i < line.words.length; i++){
+                        var word = line.words[i].text;
+                        objectname += " " + word;
+                    }
                 }
             }
-        }
-        //
-        
+
+            });
+
+        objectname += body.categories[0].name;
+
         console.log(objectname);
-
-        //res.json(objectname);
-
-        });
 
         res.json(objectname);
 
+        });
 });
 
 faceRec.post('/', function(req, res) {
