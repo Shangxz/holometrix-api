@@ -24,9 +24,6 @@ var objectname = "";
 
 router.post('/', function(req, res) {
 
-        //console.log(req.body);
-        //res.json(req.body);
-
         objectname = "";
 
         var options = { method: 'POST',
@@ -86,15 +83,6 @@ router.post('/', function(req, res) {
                 });
 
         });
-
-        /////////////////////// OCR API CALL /////////////////////////////////////
-        console.log("ocr api call ");
-
-        
-
-        
-
-        //res.json(objectname);
 
 });
 
