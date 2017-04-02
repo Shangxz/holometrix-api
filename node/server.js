@@ -50,20 +50,10 @@ router.post('/', function(req, res) {
         json: true };
 
         request(options, function (error, response, body) {
-        if (error) throw new Error(error);
+            if (error) throw new Error(error);
 
-        objectname += body.categories[0].name;
-
-        console.log(objectname);
-
-        //res.json(objectname);
-        //return objectname;
-
-        }).then(function(objectname){
             request(options1, function (error, response, body) {
-                if (error) throw new Error(error);
-
-                //console.log(body.regions[0]);
+            if (error) throw new Error(error);
 
                 for (var k = 0; k < body.regions.length; k++){
                     var region = body.regions[k];
@@ -75,13 +65,15 @@ router.post('/', function(req, res) {
                         }
                     }
                 }
-                
+            
                 console.log(objectname);
 
-                res.json(objectname);
+            });
 
-                });
+            objectname += body.categories[0].name;
+            res.json(objectname);
         });
+        
 });
 
 faceRec.post('/', function(req, res) {
