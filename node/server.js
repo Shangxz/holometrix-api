@@ -50,7 +50,7 @@ router.post('/', function(req, res) {
 
         console.log(objectname);
 
-        //res.json(objectname);
+        res.json(objectname);
 
         });
 
@@ -86,11 +86,11 @@ router.post('/', function(req, res) {
         
         console.log(objectname);
 
-        res.json(objectname);
+        //res.json(objectname);
 
         });
 
-        
+        res.json(objectname);
 
 });
 
