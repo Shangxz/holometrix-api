@@ -46,11 +46,11 @@ router.post('/', function(req, res) {
         request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
-        objectname  = objectname +  body.categories[0].name;
+        objectname  += body.categories[0].name;
 
         console.log(objectname);
 
-        //res.json(objectname);
+        res.json(objectname);
 
         });
 
@@ -70,23 +70,7 @@ router.post('/', function(req, res) {
         request(options1, function (error, response, body) {
         if (error) throw new Error(error);
 
-        console.log(body.regions[0]);
-        //   "language": "en",
-        //   "textAngle": 0.0,
-        //   "orientation": "Up",
-        //   "regions": [
-        //     {
-        //       "boundingBox": "83,139,107,97",
-        //       "lines": [
-        //         {
-        //           "boundingBox": "89,139,94,23",
-        //           "words": [
-        //             {
-        //               "boundingBox": "89,139,94,23",
-        //               "text": "Minute"
-        //             }
-        //           ]
-        //         },
+        //console.log(body.regions[0]);
 
         for (var k = 0; k < body.regions.length; k++){
             var region = body.regions[k];
