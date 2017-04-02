@@ -50,11 +50,9 @@ router.post('/', function(req, res) {
 
         console.log(objectname);
 
-        res.json(objectname);
+        //res.json(objectname);
 
         });
-
-        wait(10);
 
         /////////////////////// OCR API CALL /////////////////////////////////////
         console.log("ocr api call ");
@@ -91,6 +89,8 @@ router.post('/', function(req, res) {
         res.json(objectname);
 
         });
+
+        
 
 });
 
