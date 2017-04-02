@@ -34,7 +34,7 @@ router.post('/', function(req, res) {
         headers: 
         { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
             'cache-control': 'no-cache',
-            'content-type': 'application/octet-stream',
+            'content-type': 'multipart/form-data',
             'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
         body: { url : req.body },
         json: true };
@@ -44,7 +44,7 @@ router.post('/', function(req, res) {
         headers: 
         { 'postman-token': '306ef2f3-2ccf-128b-b975-d7fef6d4d8ff',
             'cache-control': 'no-cache',
-            'content-type': 'application/octet-stream',
+            'content-type': 'multipart/form-data',
             'ocp-apim-subscription-key': '19a88d6de741408eadf0734508969723' },
         body: { url : req.body },
         json: true };
